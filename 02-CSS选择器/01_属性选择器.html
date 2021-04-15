@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			[title] {
+				color: #f00;
+			}
+			[title="title2"] {
+				font-size: 25px;
+			}
+			[title*="one"] {
+				background-color: #00FFFF;
+			}
+			
+			/* 以one开头 */
+			[title^="one"] {
+				
+			}
+			/* 以one结尾 */
+			[title$="one"] {
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div title="one title1">asdad</div>
+		<div title="title2">asdad</div>
+		<div title="one title3">asdad</div>
+		<span title="qwe">ssgsf</span>
+		<p title=" one sdf">gdfgfa</p>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* div后面紧挨着的元素 且必须是兄弟关系 */
+			div + p {
+				color: #0000FF;
+			}
+			/* 全兄弟选择器 */
+			div~p {
+				color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>12</p>
+			<span>123</span>
+		</div>
+		<p>1234</p>
+		<p>12345</p>
+	</body>
+</html>
