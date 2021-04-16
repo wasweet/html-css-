@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 除div之外的元素 */
+			:not(html):not(body):not(div) {
+				color: #FF0000;
+			}
+			/* 或者 */
+			body :not(div) {
+				color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div>123</div>
+		<p>345</p>
+		<span>123</span>
+		<div>678</div>
+		<strong>098</strong>
+	</body>
+</html>

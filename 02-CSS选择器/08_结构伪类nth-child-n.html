@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/*  */
+			p:nth-child(n) {
+				color: #00FFFF;
+			}
+			/* 偶数   2n == even  */
+			a:nth-child(even) {
+				color: #FF0000;
+			}
+			/* 奇数  2n+1 == odd */
+			a:nth-child(odd) {
+				color: #0000FF;
+			}
+			
+			li:nth-child(-n+5) {
+				color: #FF0000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>文字内容1</p>
+			<p>文字内容2</p>
+			<p>文字内容3</p>
+			<p>文字内容4</p>
+			<p>文字内容5</p>
+			<p>文字内容6</p>
+		</div>
+		<hr>
+		<div>
+			<a href="">文字内容1</a>
+			<a href="">文字内容2</a>
+			<a href="">文字内容3</a>
+			<a href="">文字内容4</a>
+		</div>
+		<hr>
+		<ui>
+			<li>12313</li>
+			<li>12313</li>
+			<li>12313</li>
+			<li>12313</li>
+			<li>12313</li>
+			<li>12313</li>
+		</ui>
+	</body>
+</html>

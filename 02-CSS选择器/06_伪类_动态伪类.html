@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 建议顺序： :link, :visited, :focus, :hover, :active  */
+			/* 未访问时 */
+			a:link {
+				color: #0000FF;
+			}
+			/* 访问过后 */
+			a:visited {
+				color: #00FFFF;
+			}
+			/* 覆盖时 */
+			a:hover {
+				color: #FF0000;
+			}
+			/* 选中时 */
+			a:active {
+				color: black;
+			}
+			
+			/* hover active 也可以用在其他元素上 */
+			
+			strong:hover {
+				font-size: 20px;
+			}
+			strong:active {
+				color: #0000FF;
+			}
+			
+			
+			/* 获取焦点时 */
+			input:focus {
+				/* color: #FF0000; */
+				background-color: #FF0000;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- 1 在a元素上 -->
+		<a href="#">百度一下</a>
+		
+		<!--2. /* hover active 也可以用在其他元素上 */ -->
+		<strong>百度一下</strong>
+		<hr>
+		<!--3. focus -->
+		<div>
+			<input type="text">
+		</div>
+	</body>
+</html>
