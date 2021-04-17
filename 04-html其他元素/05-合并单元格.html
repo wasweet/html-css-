@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				border: 1px solid #000000;
+				
+				/* 将边框合并 */
+				border-collapse: collapse;
+				
+				/* table 居中显示 */
+				margin: 0 auto;
+			}
+			td,th {
+				border: 1px solid #000000;
+				padding: 10px;
+				text-align: center;
+			}
+			
+			table caption {
+				font-weight: 700;
+				font-size:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<!-- 合并单元格
+			 colspan : 行
+			 rowspan : 列
+			 -->
+			
+			<!-- caption table内的标题  -->
+			<caption>标题</caption>
+			
+			<!-- 头部 -->
+			<thead>
+				<tr>
+				<th colspan="2">内容一</th>
+				<!-- <th>内容二</th> -->
+				<th>内容三</th>
+				<th>内容四</th>
+				<th>内容五</th>
+			</tr>
+			</thead>
+			
+			<!-- tbody 表格主体 -->
+			<tbody>
+				<tr>
+				<td>内容一</td>
+				<td rowspan="2">内容二</td>
+				<td>内容三</td>
+				<td colspan="2" rowspan="2">内容四</td>
+				<!-- <td>内容五</td> -->
+			</tr>
+			<tr>
+				<td>内容一</td>
+				<!-- <td>内容二</td> -->
+				<td>内容三</td>
+				<!-- <td>内容四</td> -->
+				<!-- <td>内容五</td> -->
+			</tr>
+			</tbody>
+			<!-- 尾部 -->
+			<tfoot>
+				
+			</tfoot>
+		</table>
+	</body>
+</html>
