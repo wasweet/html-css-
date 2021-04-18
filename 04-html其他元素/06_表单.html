@@ -7,6 +7,14 @@
 			#box1 {
 				width: 400px;
 			}
+			
+			/* 禁止缩放
+			 resize: horizontal 水平缩放
+			 resize: vertical 垂直缩放
+			 */
+			textarea {
+				resize: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -14,12 +22,19 @@
 		<fieldset id="box1">
 			<legend>必填信息</legend>
 			<div>
-			<span>账号：</span>
-			<input type="text">
+				
+				<!-- maxlength : 允许输入的最大字符 -->
+				<!-- placeholder:占位字符 -->
+				<!-- readonly:只读 -->
+				<!-- disabled:禁用 -->
+				<!-- checked:默认选中 -->
+				<!-- autofocus: 获取焦点 -->
+			<span>手机：</span>
+			<input type="text" maxlength="11" placeholder="请输入手机号" autofocus="autofocus">
 		</div>
 		<div>
 			<span>密码：</span>
-			<input type="password">
+			<input type="password" placeholder="请输入密码">
 		</div>
 		<div>
 			<span>验证码：</span>
@@ -37,7 +52,7 @@
 			</div>
 			<div>
 				<span>性别：</span>
-				<span>男</span><input type="radio" name="sex" id="" value="" />
+				<span>男</span><input type="radio" name="sex" id="" value=""  checked="checked"/>
 				<span>女</span><input type="radio" name="sex" id="" value="" />
 			</div>
 			<div>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				width: 400px;
+			}
+			textarea {
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 上传文件 必须是post请求 + enctype="multipart/form-data" -->
+		<form action="http://www.baidu.com" method="post" enctype="multipart/form-data">
+		<fieldset id="box1">
+			<legend>必填信息</legend>
+			<div>
+				
+			<span>手机：</span>
+			<input type="text" 
+				   name="phone"
+				   maxlength="11" 
+				   placeholder="请输入手机号" 
+				   autofocus="autofocus">
+		</div>
+		<div>
+			<span>密码：</span>
+			<input type="password" 
+			       placeholder="请输入密码"
+				   name="pwd">
+		</div>
+		<div>
+			<span>验证码：</span>
+			<input type="text">
+			<input type="button" 
+				   value="获取验证码"
+				   name="testmesasge">
+		</div>
+			
+		</fieldset>
+		
+		<fieldset id="">
+			<legend>选填信息</legend>
+			<div>
+				<span>照片：</span>
+				<input type="file" name="pic" id="" value="" />
+			</div>
+			<div>
+				<span>性别：</span>
+				<span>男</span><input type="radio" name="sex" id="" value="male"  checked="checked"/>
+				<span>女</span><input type="radio" name="sex" id="" value="female" />
+			</div>
+			<div>
+				<span>爱好：</span>
+				<span>篮球</span><input type="checkbox" name="love" id="" value="basketball" />
+				<span>足球</span><input type="checkbox" name="love" id="" value="football" />
+				<span>橄榄球</span><input type="checkbox" name="love" id="" value="ball" />
+			</div>
+			<div>
+				<span>学历：</span>
+				<select name="education">
+					<option value="0">小学</option>
+					<option value="1">中学</option>
+					<option value="2">大学</option>
+				</select>
+			</div>
+			<div>
+				<span>简介：</span>
+				<textarea rows="5" cols="10" name="introduction">
+					
+				</textarea>
+			</div>
+			
+		</fieldset>
+		
+		<input type="reset" value="重置" />
+		<input type="submit" value="提交">
+		</form>
+	</body>
+</html>
