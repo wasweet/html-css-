@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* content-box :含义是设置宽度和高度时 只是指定内容的宽高 */
+			/* boder-box :  含义是设置宽度和高度时 内容+内边距+边框的宽度 */
+			.box1 {
+				width: 200px;
+				height: 200px;
+				background-color:#f00;
+				border-bottom: 20px solid #0000FF;
+				padding-bottom: 20px;
+				
+				/* box-sizing: border-box; */
+			}
+			.box2 {
+				width: 200px;
+				height: 200px;
+				background-color:#f00;
+				border-bottom: 20px solid #0000FF;
+				padding-bottom: 20px;
+				
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<span>asdada</span>
+		<div class="box2"></div>
+		<span>adfdwqda</span>
+	</body>
+</html>

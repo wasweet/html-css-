@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box a {
+				position: fixed;
+				/* 相对于视口   脱离标准流*/
+				top: 20px;
+				right: 20px;
+			}
+			
+			
+			
+			/*  */
+			.right-nav {
+				margin: 0;
+				padding: 0;
+				position: fixed;
+				top: 400px;
+				right: 30px;
+				
+				border: 1px solid #999999;
+			}
+			.right-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.right-nav li {
+				border-bottom: 1px solid #999999;
+			}
+			.right-nav a {
+				text-decoration: none;
+				color: #999999;
+				font-size: 12px;
+				display: block;
+				text-align: center;
+				width: 62px;
+				height: 48px;
+				padding: 12px 0 0;
+			}
+			.right-nav .top {
+				border-bottom: none;
+			}
+			.right-nav i {
+				display: block;
+				width: 16px;
+				height: 16px;
+				margin: 0 auto 5px;
+				
+			}
+			.qiandao i{
+				background-image: url("./img/icon-test_1.png");
+			}
+			.cart i{
+				background-image: url("./img/icon-test_2.png");
+			}
+			.app i{
+				background-image: url("./img/icon-test_3.png");
+			}
+			.top i{
+				background-image: url("./img/icon-test.png");
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span>span元素</span>
+			<strong>strong元素</strong>
+			<img src="../01-CSS文本和字体/img/test.webp" alt="">
+			<h1>h1元素</h1>
+			<a href="">百度一下</a>
+			<i>sda</i>
+			
+		</div>
+		
+		<div class="right-nav">
+			<ul>
+				<li class="qiandao"><a href="#"><i></i><span>签到</span></a></li>
+				<li class="cart"><a href="#"><i></i><span>购物车</span></a></li>
+				<li class="app"><a href="#"><i></i><span>APP</span></a></li>
+				<li class="top" ><a href="#"><i></i><span>TOP</span></a></li>
+			</ul>
+		</div>
+	</body>
+</html>

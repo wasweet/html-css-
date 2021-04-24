@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			ul li a {
+				text-decoration: none;
+				border: 1px solid #0000FF;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				
+				/*居中 */
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			ul li {
+				display: inline-block;
+				padding: 5px;
+			}
+			
+			.prev  a, .next a {
+				width: 80px;
+			}
+			ul li a:hover {
+				border-color: #00FFFF;
+				background-color: aqua;
+			}
+			.active {
+				border: none;
+				
+			}
+			.active:hover {
+				border: none;
+				background-color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table">
+			<ul>
+				<li class="prev"><a href="#">&lt;上一页</a></li>
+				<li><a class="active" href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>
+				<li><a href="#">10</a></li>
+				<li class="next"><a href="#">下一页&gt;</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
