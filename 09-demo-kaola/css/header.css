@@ -1,0 +1,198 @@
+@charset "utf-8";
+#header .nav {
+	
+	height: 30px;
+	line-height: 30px;
+	background-color: #000000;
+}
+#header .nav a {
+	color: #999999;
+}
+#header .wrap {
+	width: 1100px;
+	margin: 0 auto;
+}
+#header .welcome ,#header .nav-left a {
+	float: left;
+}
+#header .nav a{
+	margin-left: 15px;
+	display: inline-block;
+	height: 30px;
+	margin-right: 15px;
+}
+#header .nav  a:hover {
+	color: #fff;
+}
+
+#header .left-group ,#header .right-group {
+	float: right;
+}
+#header .right-group a {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 12px;
+}
+#header .right-group a:hover {
+	background-color: #fff;
+	color: #f00;
+}
+#header .nav-right .right-group i {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: 4px solid #999;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	position: relative;
+	top:2px;
+	transform-origin: center 2px;
+	 transition: transform .2s ease-in;
+}
+#header .nav-right .right-group a:hover i {
+	border-top-color: #f00;
+	transform: rotate(180deg);
+}
+
+/* hover之后的下选框  手机考拉*/
+#header .nav-left .phone {
+	position: relative;
+}
+#header .nav-left .phone .pic {
+	display: none;
+	position: absolute;
+	text-align: center;
+	border: 1px solid #eaeaea;
+	padding: 3px 3px 0;
+	top: 30px;
+	left: -134px;
+	margin-left: 50%;
+	margin-top: 8px;
+}
+#header .nav-left .phone .pic img {
+	vertical-align: middle;
+	display: block;
+}
+#header .nav-left .phone .pic span {
+	display: block;
+}
+#header .nav-left .phone .jiantou {
+	/* display: inline-block; */
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	background-color:#fff;
+	border-top: 1px solid #EAEAEA;
+	border-left: 1px solid #EAEAEA;
+	transform: rotate(45deg);
+	
+	top: -11px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+#header .nav-left .phone span:hover + .pic {
+	display: inline;
+}
+
+/* 个人中心 */
+#header .nav .right-group {
+	position: relative;
+}
+#header .nav .right-group .main {
+	position: absolute;
+	border: 1px solid #EAEAEA;
+	background-color: #fff;
+	padding: 4px 15px 12px 14px;
+	left: -15px;
+	top: 30px;
+	border-top: 0;
+	display: none;
+}
+#header .nav .right-group .main a{
+	display: block;
+	height: 28px;
+	line-height: 28px;
+}
+#header .nav-right .right-group a:hover + .main {
+	display: inline;
+}
+
+/*  */
+#header .contens {
+	height: 100px;
+	/* background-color: #00FFFF; */
+}
+#header .contens a img {
+	width: 300px;
+	height: 65px;
+	position: relative;
+	top:50%;
+	transform: translate(0,-50%);
+}
+#header .contens .search {
+	float: right;
+	position: relative;
+	top:50%;
+	transform: translate(0,-50%);
+	width: 403px;
+	margin-right: 30px;
+	padding: 6px 39px 6px 30px;
+	border: 2px solid #f00;
+	border-radius: 40px ;
+	/* background-color: #fff; */
+}
+#header .contens .search input {
+	height: 24px;
+	width: 400px;
+}
+#header .contens .search input::placeholder {
+	font-style: italic;
+}
+#header .contens .search i {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	left: 8px;
+	background-image: url(../img/icon1-832edc2b58.png);
+	background-position: -466px -667px;
+}
+#header .contens .search .search-button {
+	display: inline-block;
+	width: 60px;
+	height: 40px;
+	position: absolute;
+	right: -2px;
+	top: -2px;
+	border-radius: 40px;
+	background:url(../img/6e4da089-9347-4dc2-be19-4962832a4a5c.png) no-repeat center #f00;
+}
+#header .cart {
+	float: right;
+	width: 106px;
+	height: 36px;
+	
+	position: relative;
+	top:50%;
+	transform: translate(0,-50%);
+		background-color: #fff;
+		    line-height: 36px;
+		    font-size: 14px;
+		    text-align: center;
+		    
+		    border-radius: 36px;
+		    border: 2px solid #ff1e32;
+}
+#header .cart i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 2px;
+	margin-bottom: -5px;
+	background: url(https://kaola-haitao.oss.kaolacdn.com/14f1eb69-f7c0-4d4f-95d8-4aee8e2e1f1b.png?x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_90) no-repeat 0 0;
+}
