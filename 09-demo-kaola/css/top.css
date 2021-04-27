@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+
+/* topTab */
+#top .topTab {
+	height: 40px;
+	line-height: 40px;
+}
+#top .topTab .toplevel {
+	position: relative;
+	float: left;
+	width: 164px;
+	background: linear-gradient(90deg,red,#ff3264);
+	/* text-align: center; */
+	color: #fff;
+	font-size: 14px;
+}
+#top .topTab .top-list {
+	float: left;
+	padding-left: 25px;
+}
+#top .topTab .top-list li {
+	float: left;
+	padding: 0 20px;
+	font-size: 15px;
+	font-weight: 700;
+}
+#top .topTab .top-list .first a{
+	color: #ff1e32;
+}
+#top .topTab .top-list li:hover a {
+	color: #ff1e32;
+}
+/* 所有分类 图标 */
+#top .toplevel .lineicon i{
+	width: 15px;
+	height: 0;
+	border-top: 2px solid #ddd;
+	display: block;
+	margin-bottom: 3px;
+}
+#top .toplevel .lineicon {
+	position: relative;
+	display: inline-block;
+	margin: 0 24px 0 15px;
+	width: 15px;
+	height: 12px;
+	overflow: hidden;
+}
+
+/*  */
+#top .topTab .toplevel .right-list {
+	position: absolute;
+	background: linear-gradient(90deg,red,#ff3264);
+	z-index: 1;
+}
+#top .topTab .toplevel .right-list li{
+	height: 40px;
+	width: 158px;
+	font-size: 14px;
+	padding: 0 3px;
+	z-index: 1;
+}
+#top .topTab .toplevel .right-list li i {
+	margin-left: 15px;
+}
+#top .topTab .toplevel .right-list li a {
+	display: block;
+	height: 39px; 
+	border-top: 1px solid #FF5160;
+	color: #fff;
+}
+#top .topTab .toplevel .right-list .icon {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	padding: 0 20px 0 10px;
+}
+#top .topTab .toplevel .right-list .iconv {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	padding: 0 20px 0 10px;
+}
+
+#top .topTab .toplevel .right-list li:hover a {
+	color: #f00;
+	background-color: #fff;
+}
+#top .topTab .toplevel .right-list .iconv {
+	display: none;
+}
+#top .topTab .toplevel .right-list li:hover .icon{
+	display: none;
+}
+#top .topTab .toplevel .right-list li:hover .iconv {
+	display: inline;
+}
+
+/* swiper */
+#top .swiper {
+	position: relative;
+	overflow: hidden;
+}
+#top .swiper .ss img {
+	position: relative;
+	transform: translate(-50%);
+	left: 50%;
+}
+/* footnav */
+
+ #top .footnav {
+	 position: absolute;
+	 bottom: 0;
+	 height: 45px;
+	 width: 100%;
+	 background-color: rgba(0,0,0,.3);
+ }
+#top .footnav .wrap li {
+	float: left;
+	height: 45px;
+	line-height: 45px;
+	margin-right: 40px;
+} 
+#top .footnav .wrap li a {
+	color: #fff;
+	font-style: 12px;
+}
+#top .footnav .wrap li a:hover {
+	text-decoration:underline;
+}
+#top .footnav .wrap .right-text {
+	float: right;
+}
