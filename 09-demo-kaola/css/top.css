@@ -107,16 +107,83 @@
 	transform: translate(-50%);
 	left: 50%;
 }
-/* footnav */
 
+#top .swiper .ss .control {
+	position: absolute;
+	width: 1100px;
+	height: 68px;
+	top:0;
+	left: 0;
+	right: 0;
+	top: 40%;
+}
+#top .swiper .ss .control i {
+	display: none;
+	width: 34px;
+	height: 68px;
+	background: url(../img/icon1-832edc2b58.png);
+}
+#top .swiper .ss a:hover .control i {
+	display: block;
+}
+#top .swiper .ss .control .prev {
+	float: left;
+	background-position: -625px -153px;
+	margin-left: 170px;
+}
+#top .swiper .ss .control .next {
+	float: right;
+	background-position: -670px -67px;
+}
+#top .swiper .ss .dians {
+	position: absolute;
+	height: 101px;
+	left: 0;
+	right:0;
+	bottom: 60px;
+	width: 1100px;
+	margin: 0 auto;
+}
+#top .swiper .ss .dians .dian {
+	position: absolute;
+	bottom: 20px;
+	margin-left: 210px;
+}
+#top .swiper .ss .dians .dian i{
+	float: left;
+	width: 9px;
+	height: 9px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+#top .swiper .ss .dians .dian .active {
+	background-color: #FF1E32;
+}
+#top .swiper .ss .dians .dian i:hover {
+	background-color:#FF1E32 ;
+}
+/* footnav */
  #top .footnav {
 	 position: absolute;
 	 bottom: 0;
 	 height: 45px;
 	 width: 100%;
+	 overflow: hidden;
 	 background-color: rgba(0,0,0,.3);
  }
+  #top .footnav .blur {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  background:url(../img/195e114026244fada65668a37992e70e_1920_506.png) center bottom;
+	  filter: blur(8px);
+  }
 #top .footnav .wrap li {
+	position: relative;
+	z-index: 1;
 	float: left;
 	height: 45px;
 	line-height: 45px;
