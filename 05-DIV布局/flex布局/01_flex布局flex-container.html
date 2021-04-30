@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 500px;
+				height: 500px;
+				background-color: #f00;
+				/* 开启flex布局
+				   flex：块级元素
+				   inline-flex ：行内级元素
+				 */
+				display: flex;
+				
+				/* 1. flex-direction 改变主轴方向
+					默认row：从左向右
+					row-reverse：从右向左
+					column:从上到下
+					column-reverse：从下往上
+				 */
+				flex-direction: row-reverse;
+				
+				/* 2. justify-content : 决定flex items 在主轴上的对齐方式 */
+				/* justify-content: center;
+				 flex-star flex-end center space-between
+				 space-evenly space-around
+				 */
+				justify-content: space-around;
+				
+				/* 3. align-items 决定来flex items 在cross轴上的对齐方式
+					normal/stretch: 在cross轴方向的size为auto时，自动拉伸至填充flex contanier
+					flex-start flex-end  center baseline
+				 */
+				align-items: center;
+				
+				/* 4. flex-wrap 多行显示 */
+				flex-wrap: wrap;
+				
+				/* 5.align-content 决定多行在cross轴上的对齐方式
+				flex-star flex-end center space-between
+				space-evenly space-around
+				*/
+				align-content: flex-start;
+			}
+			.item {
+				width: 100px;
+				height: 100px;
+			}
+			.item1 {
+				background-color: #0000FF;
+			}
+			.item2 {
+				background-color: #00FF00;
+			}
+			.item3 {
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item item1">item1</div>
+			<div class="item item2">item2</div>
+			<div class="item item3">item3</div>
+			<div class="item item1">item4</div>
+			<div class="item item2">item5</div>
+			<div class="item item3">item6</div>
+			<div class="item item1">item7</div>
+			<div class="item item2">item8</div>
+		</div>
+	</body>
+</html>
