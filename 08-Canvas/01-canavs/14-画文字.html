@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+				display: block;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('box');
+			var test = canvas.getContext('2d');
+			
+			/**
+			 * fillText(text,x,y,maxWidth)
+			 * */
+			 
+			 // 设置相关样式
+			 test.font = '50px 宋体';
+			 test.fillStyle = '#0000FF';
+			 // 实心文字
+			test.fillText('Hello', 200,200);
+			
+			// 空心文字
+			test.strokeStyle = '#00FF00'
+			test.strokeText('nihao',100,100);
+		</script>
+	</body>
+</html>

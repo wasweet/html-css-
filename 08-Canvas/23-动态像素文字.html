@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		 <!-- <canvas id="box" width="500px" height="500px"></canvas> -->
+		<script type="text/javascript">
+			var canvas = document.getElementById("box");
+			var test = canvas.getContext('2d');
+			
+			var w=h=500;
+			
+			//1.画文字
+			 // text('心️',w/2,h/2);
+			 text('❤️',w/2,h/2);
+			//2.获取像素点
+			var copy = test.getImageData(0,0,w,h);
+			
+			//3.清除画布
+			test.clearRect(0,0,w,h);
+			
+			//运动次数
+			var times = 100;
+			// 产生随机数
+			function r(num) {
+				return  parseInt(Math.random()*num);
+			}
+			//定义小球类
+			function Ball(xEnd,yEnd) {
+				//起始位置，随机
+				this.xStart = r(w);
+				this.yStart = r(h);
+				//结束位置，固定
+				this.xEnd = xEnd;
+				this.yEnd = yEnd;
+				//计算运动速度
+				this.xSpeed = (this.xEnd - this.xStart)/times;
+				this.ySpeed = (this.yEnd - this.yStart)/times;
+				
+				//小球运动的中心
+				this.x = this.xStart;
+				this.y = this.yStart;
+				
+				// 半径和颜色
+				this.r = 3;
+				this.color = '#f00';
+			}
+			Ball.prototype.show = function() {
+				// 计算每次运动的坐标
+				this.x = this.x + this.xSpeed;
+				this.y = this.y + this.ySpeed;
+				drawCircle(this.x,this.y,this.r,this.color);
+			}
+			
+			//4.筛选有效像素点
+			var leap = 20;
+			var ballArr = [];
+				for(var y=0;y<h;y+=leap) {
+					for(var x=0;x<w;x+=leap) {
+						var index = x + y*w;
+						var a = copy.data[index*4 + 3];
+						if(a > 128) {
+							//调用小球类画圆
+							var ball = new Ball(x,y);
+							ballArr.push(ball);
+							ball.show();
+						}
+					}
+				}
+			
+			//动起来
+			var count = 0;
+		 var timer = setInterval(function() {
+			  count++;
+				test.clearRect(0,0,w,h);
+				for(var i=0;i<ballArr.length;i++) {
+					ballArr[i].show();
+				}
+				// 判断何时停止
+				if(count+1 == times) {
+					clearInterval(timer);
+				}
+			},10)
+			
+			function text(text,x,y) {
+				test.font = '200px 微软雅黑';
+				test.textAlign ='center';
+				test.textBaseline = 'middle';
+				test.fillText(text,x,y);
+			}
+			function drawCircle(x,y,r,color) {
+				test.beginPath();
+				test.arc(x,y,r,0,Math.PI*2);
+				test.fillStyle = color || '#f00';
+				test.fill();
+			}
+			</script>
+	</body>
+</html>

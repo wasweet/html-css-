@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.clock {
+				width: 400px;
+				background-color: #DDDDDD;
+				border-radius: 20px;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="clock">
+			<canvas id="view" width="400" height="400"></canvas>
+		</div>
+		<script type="text/javascript">
+			var canvas = document.getElementById('view');
+			var test = canvas.getContext('2d');
+			
+			// 定义基础变量
+			var w = h = 400;//时钟宽高
+			var x = y = 200;//时钟中心坐标
+			var r = 180;//时钟半径
+			var r_hour = 60; //时针长度
+			var r_minute = 120;//分针长度
+			var r_second = 140;//秒针长度
+			var r_text = 140;//定义表盘文字半径
+			var r_square = 165;//刻度
+			var r_circle = 10;//表盘小圆点
+			var deg = 2 * Math.PI;//定义基本的圆周；
+			
+			// 平移中心点
+			test.translate(w/2,h/2);
+			function clock() {
+				//1.画圆
+				drawCircle(0,0,r,'#fff');
+				
+				// 2.画时针
+				var date = new Date();
+				var hour = date.getHours()*(deg/12) - deg/4;
+				var minute = date.getMinutes()*(deg/60) - deg/4;
+				var sceond = date.getSeconds()*(deg/60) - deg/4;
+				
+				
+				drawLine(0,0,r_hour*Math.cos(hour),r_hour*Math.sin(hour),'#000',10);
+				drawLine(0,0,r_minute*Math.cos(minute),r_minute*Math.sin(minute),'#000',5);
+				drawLine(0,0,r_second*Math.cos(sceond),r_second*Math.sin(sceond),'#f00',2);
+				
+				// drawLine(0,0,0,r_hour,'#000',10);
+				// drawLine(0,0,0,r_minute,'#000',5);
+				// drawLine(0,0,0,r_second,'#f00',2);
+				
+				//3.画中心点的圆
+				drawCircle(0,0,r_circle,'#000');
+				
+				// 4.画数字
+				for(var i = 1;i <= 12; i++) {
+					/**
+					 * 计算圆周坐标
+					 * x = x + r*cos(degree)；
+					 * y = y + r*sin(degree);
+					 * */
+					 var degree = ((Math.PI*2)/12)*i-Math.PI/2;
+					 var x = r_text * Math.cos(degree);
+					 var y = r_text * Math.sin(degree);
+					 text(i,x,y);
+				}
+				
+				// 5.画刻度
+				
+				for(var i = 1;i <= 60; i++) {
+					/**
+					 * 计算圆周坐标
+					 * x = x + r*cos(degree)；
+					 * y = y + r*sin(degree);
+					 * x1,y1  x2,y2
+					 * */
+					 var degree = ((Math.PI*2)/60)*i-Math.PI/2;
+					 var x1 = r * Math.cos(degree);
+					 var y1 = r * Math.sin(degree);
+					 
+					 /**
+					  * 判断是否整点
+					  * */
+					  if(i%5 == 0) {
+						   var x2 = r_square * Math.cos(degree);
+						   var y2 = r_square * Math.sin(degree);
+						   drawLine(x1,y1,x2,y2,'#999',3);
+					  }else {
+						  var x2 = (r_square+3) * Math.cos(degree);
+						  var y2 = (r_square+3) * Math.sin(degree);
+						  drawLine(x1,y1,x2,y2,'#eee',2);
+					  }
+					
+				}
+			}
+			// 初始化 避免等待一秒
+			clock();
+			setInterval(function() {
+				clock();
+			},1000)
+			
+		function drawLine(x1,y1,x2,y2,color,width) {
+			test.beginPath();
+			test.moveTo(x1,y1);
+			test.lineTo(x2,y2);
+			test.strokeStyle = color ||'#000';
+			test.lineWidth = width;
+			test.lineCap = 'round';
+			test.stroke();
+			test.closePath();
+		}
+		function text(text,x,y) {
+			test.font = '20px 微软雅黑';
+			test.textAlign ='center';
+			test.textBaseline = 'middle';
+			test.fillText(text,x,y);
+		}
+		function drawCircle(x,y,r,color) {
+			test.beginPath();
+			test.arc(x,y,r,0,Math.PI*2);
+			test.fillStyle = color || '#f00';
+			test.fill();
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementById('box');
+			var test = canvas.getContext('2d');
+			
+			test.beginPath();
+			test.moveTo(50,50);
+			test.lineTo(50,400);
+			test.lineTo(400,400);
+			test.stroke();
+			test.closePath();
+			// test.fillStyle = 'red';
+			// test.fillRect(100,150,50,250);
+			// test.fillStyle = 'blue';
+			// test.fillRect(200,200,50,200);
+			for(var i=0;i<6;i++ ) {
+				var height = Math.random()*280+10 //10-290
+			    test.fillStyle = '#' + parseInt(Math.random()*0xFFFFFF).toString(16);
+				test.fillRect(100+40*i,400-height,20,height);
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="box" width="" height=""></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('box');
+			var test = canvas.getContext('2d');
+			
+			// 画布宽高
+			// var w=h=500;
+			// 获取视口的宽高
+			var w = document.documentElement.clientWidth-6;
+			var h = document.documentElement.clientHeight-6;
+			// 更新canvas宽高
+			canvas.width = w;
+			canvas.height = h;
+			
+			function r(num) {
+				 return Math.random()*num;
+			}
+			function Ball(x,y) {
+				 this.x = x;
+				 this.y = y;
+				 
+				 this.r = 50;
+				 this.color = '#' + parseInt(Math.random()*0xFFFFFF).toString(16);
+			}
+			//定义小球显示方法
+			Ball.prototype.show = function() {
+				// 半径
+				this.r--;
+				drawCircle(this.x,this.y,this.r,this.color);//画小球
+			}
+			document.onmousemove = function(e) {
+				// console.log(e.x,e.y);
+				var ball = new Ball(e.x,e.y);
+					BallArr.push(ball);
+					ball.show();
+			}
+			
+			var BallArr = [];
+			// 创造小球
+			for(var i=0;i<5;i++) {
+				var ball = new Ball();
+				// 放入数组
+				BallArr.push(ball);
+				ball.show();
+			}
+			setInterval(function() {
+				// 清除画布
+				test.clearRect(0,0,w,h);
+				for(var i=0;i<BallArr.length;i++) {
+					/**
+					 * 如果小球半径小于0，需要从数组中删除
+					 * */
+					var ball = BallArr[i];
+					if(ball.r <=0 ) {
+						BallArr.splice(i,1);
+					}else
+					ball.show(); 
+					}
+			},10)
+			
+			
+			
+			function drawCircle(x,y,r,color) {
+				test.beginPath();
+				test.arc(x,y,r,0,Math.PI*2);
+				test.fillStyle = color || '#f00';
+				test.fill();
+			}
+		</script>
+	</body>
+</html>

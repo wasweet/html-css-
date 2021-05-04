@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+				display: block;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('box');
+			var test = canvas.getContext('2d');
+			
+			// 画两条直线
+			test.beginPath();
+			test.moveTo(250,0);
+			test.lineTo(250,500);
+			test.stroke();
+			test.closePath();
+			
+			test.beginPath();
+			test.moveTo(0,250);
+			test.lineTo(500,250);
+			test.stroke();
+			test.closePath();
+			
+			test.font = '50px 宋体';
+			test.textAlign ='center';
+			test.textBaseline = 'middle';
+			test.fillText('hello',250,250);
+			
+			/**
+			 * 水平文字属性值textAlign: start end left right center (线 在文字的什么方向  )
+			 * 垂直文字属性值textBaseline：top bottom  middle
+			 * */
+		</script>
+	</body>
+</html>

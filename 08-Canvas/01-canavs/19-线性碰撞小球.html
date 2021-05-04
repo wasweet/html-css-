@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* canvas {
+				border: 1px solid #f00;
+				display: block;
+				margin: 100px auto;
+			} */
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('box');
+			var test = canvas.getContext('2d');
+			// 画布宽高
+			// var w=h=500;
+			// 获取视口的宽高
+			var w = document.documentElement.clientWidth-6;
+			var h = document.documentElement.clientHeight-6;
+			// 更新canvas宽高
+			canvas.width = w;
+			canvas.height = h;
+			
+			// 1.定义小球类
+			function r(num) {
+					 return Math.random()*num;
+			}
+			function Ball(text) {
+					this.x = r(380)+60;//60-440
+					this.y = r(380)+60;
+					
+					this.r = r(50)+10;//10-60
+					this.color = '#' + parseInt(Math.random()*0xFFFFFF).toString(16);
+					
+					this.xSpeed = r(3)+2; //2-5
+					this.ySpeed = r(3)+1; //1-4
+					
+					// 接收外部参数
+					this.text = text;
+			}
+			//定义小球显示方法
+			Ball.prototype.show = function() {
+					 drawCircle(this.x,this.y,this.r,this.color);//画小球
+					 text(this.text, this.x+this.r, this.y);//画文字
+			}
+			// 定义小球运动的方法（碰撞检测）
+			Ball.prototype.run = function() {
+					if(this.x-this.r <=0 || this.x+this.r>=w) {
+						 this.xSpeed = -this.xSpeed;
+					 }
+					 if(this.y-this.r <=0 || this.y+this.r>=w) {
+					 	 this.ySpeed = -this.ySpeed;
+					 }
+					this.x = this.x+this.xSpeed;
+					this.y = this.y+this.ySpeed;
+				}
+			// 创建一个数组
+			var BallArr = [];
+			var titleArr = 'JavaScript HTML5 JAVA VUE.js CSS Canvas Node.js'.split(' ');
+			
+			// 创造小球
+			for(var i=0;i<5;i++) {
+				var ball = new Ball(titleArr[i]);//传入title
+				// 放入数组
+				BallArr.push(ball);
+				ball.show();
+				
+				/**
+				 * 小球连线
+				 * */
+				 for(var j=0;j<i;j++) {
+					 //取出当前小球前面的球
+					 var prevBall = BallArr[j];
+					 // 两个求的中心连线
+					 drawLine(ball.x,ball.y,prevBall.x,prevBall.y,ball.color);
+				 }
+			}
+			// console.log(BallArr);
+			// 小球运动
+			setInterval(function() {
+				// 清除画布
+				test.clearRect(0,0,w,h);
+				for(var i=0;i<BallArr.length;i++) {
+					var ball = BallArr[i];
+					// 更新坐标
+					ball.run();
+					ball.show(); 
+					for(var j=0;j<i;j++) {
+						 //取出当前小球前面的球
+						 var prevBall = BallArr[j];
+						 // 两个求的中心连线
+						 drawLine(ball.x,ball.y,prevBall.x,prevBall.y,ball.color);
+					}
+				}
+			},10)
+			
+			function drawLine(x1,y1,x2,y2,color) {
+				test.beginPath();
+				test.moveTo(x1,y1);
+				test.lineTo(x2,y2);
+				test.strokeStyle = color ||'#000';
+				test.stroke();
+				test.closePath();
+			}
+			function text(text,x,y) {
+				test.font = '20px 微软雅黑';
+				test.textAlign ='top';
+				test.textBaseline = 'middle';
+				test.fillText(text,x,y);
+			}
+			function drawCircle(x,y,r,color) {
+				test.beginPath();
+				test.arc(x,y,r,0,Math.PI*2);
+				test.fillStyle = color || '#f00';
+				test.fill();
+			}
+			
+		</script>
+	</body>
+</html>

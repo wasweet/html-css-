@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+				display: block;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		 <!-- <canvas id="box" width="500px" height="500px"></canvas> -->
+		<script type="text/javascript">
+			var canvas = document.getElementById("box");
+			var test = canvas.getContext('2d');
+			
+			var w=h=500;
+			var x = 100;
+			var y = 100;
+			var r = 50;
+			
+			xSpeed = 1;
+			ySpeed = 2;
+			setInterval(function() {
+				test.clearRect(0,0,w,h);
+				
+				//在小球碰到边缘是 速度取反即可
+				 if(x-r <=0 || x+r>=w) {
+					 xSpeed = -xSpeed;
+				 }
+				 if(y-r <=0 || y+r>=w) {
+				 	 ySpeed = -ySpeed;
+				 }
+				x = x+xSpeed;
+				y = y+ySpeed;
+				drawCirle(x,y,r);
+			},5)
+			
+			 
+			 
+			 function drawCirle(x,y,r) {
+				 test.beginPath();
+				 test.arc(x,y,r,0,Math.PI*2,false);
+				 test.fill();
+			 }
+			</script>
+	</body>
+</html>

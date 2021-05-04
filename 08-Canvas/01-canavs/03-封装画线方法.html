@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("box");
+			var test = canvas.getContext('2d');
+			
+			drawLine(100,100,400,400,'red',5);
+			
+			function drawLine(x1,y1,x2,y2,color,width) {
+				test.beginPath();
+				test.moveTo(x1,y1);
+				test.lineTo(x2,y2);
+				// 设置颜色
+				test.strokeStyle = color;
+				// 设置线宽
+				test.lineWidth = width;
+				test.stroke();
+				test.closePath();
+			}
+		</script>
+	</body>
+</html>

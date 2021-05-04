@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		 <!-- <canvas id="box" width="500px" height="500px"></canvas> -->
+		<script type="text/javascript">
+			var canvas = document.getElementById("box");
+			var test = canvas.getContext('2d');
+			/**
+			 * rect (x1,y1,width,height)
+			 * x1 矩形左上角 x 坐标
+			 * y1 矩形左上角 y 坐标
+			 * width 矩形宽度
+			 * height 矩形高度 单位px
+			 * */
+			
+			test.rect(10,10,300,400);
+			
+			// 填充
+			test.fillStyle = '#00FF00';
+			test.fill();
+			// 描边
+			test.strokeStyle = 'red';
+			test.lineWidth = 3;
+			test.stroke();
+			/**
+			 * 如果需要描边和填充  先填充在描边
+			 * */ 
+			/**
+			 * fillRect(x,y,width,height) 绘制实心矩形
+			 * strokeRect(x,y,width,height) 绘制空心矩形
+ 			 * */ 
+		</script> 
+	</body>
+</html>

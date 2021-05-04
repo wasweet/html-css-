@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #f00;
+				display: block;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="500" height="500"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('box');
+			var test = canvas.getContext('2d');
+			
+			var img = new Image();
+			img.src = './img/TB1pUSJua61gK0jSZFlXXXDKFXa-256-256.png';
+			
+			/**
+			 * onload:	图片加载成功后触发
+			 * onerror: 图片加载失败后触发
+			 * 
+			 * drawImage(img,x,y);
+			 * drawImage(img,x,y,width,height);
+			 * drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+			 * sx 开始剪切的x坐标
+			 * sy 开始剪切的y坐标
+			 * swidth 被剪切的图像的宽度
+			 * sheight 被剪切的图像的高度
+			 * x,y 	在画布上放图像的位置
+			 * width,height 在画布上放图像的宽高
+			 * */
+			 img.onload = function() {
+				  // test.drawImage(img,0,0,500,500);
+				  test.drawImage(img,0,0,100,100,100,100,100,100);
+			 }
+			
+		</script>
+	</body>
+</html>
