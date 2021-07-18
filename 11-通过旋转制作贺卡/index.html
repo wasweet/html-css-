@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			main {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				 width: 100vw;
+				 height: 100vh;
+				 background: #34495e;
+			}
+			.card {
+				width: 400px;
+				height: 200px;
+				background: #e67e22;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 3em;
+				text-transform: uppercase;
+				color: whitesmoke;
+				position: relative;
+				 transform-style: preserve-3d;
+				transform: perspective(600px) rotateX(35deg) rotateY(15deg);
+			}
+			.card::before {
+				content: '新年';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				background-color: #e74c3c;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				transition: 1s;
+				transform-origin: left;
+			}
+			.card::after {
+				content: '快乐';
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				background-color: #e74c3c;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				transition: 1s;
+				transform-origin: right;
+			}
+			.card:hover::before {
+				transform: rotateY(-180deg);
+			}
+			.card:hover::after {
+				transform: rotateY(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="card">wasweat</div>
+		</main>
+	</body>
+</html>
