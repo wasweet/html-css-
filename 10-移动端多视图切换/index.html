@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			text-decoration: none;
+		}
+		body {
+			display: flex;
+			flex-direction: column;
+			width: 100vw;
+			height: 100vh;
+		}
+		nav {
+			height: 8vh;
+			background: #34495e;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+		main {
+			flex: 1;
+			background: #f3f3f3;
+			position: relative;
+		}
+		nav a {
+			flex:1;
+			font-size: 3em;
+			font-weight: 700;
+			opacity: .8;
+			color: white;
+		}
+		nav a:nth-child(2) {
+			border-left: 1px solid #aaa;
+			border-right: 2px solid #aaa;
+		}
+		main div {
+			position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  transition: all 1s;
+		  background: #f3f3f3;
+		  opacity: 0;
+		  transform: translate(0, -100%);
+		}
+		main>div:target {
+		    opacity: 1;
+		    transform: translate(0%, 0%);
+		}
+		main>div:nth-of-type(1):target {
+		    background: #3498db;
+		}
+			main>div:nth-of-type(2):target {
+		    background: #9b59b6;
+		}
+			main>div:nth-of-type(3):target {
+		    background: #16a085;
+		}
+		</style>
+	</head>
+	<body>
+		<main>
+		        <div id="home">
+		        </div>
+		        <div id="video">
+		           
+		        </div>
+		        <div id="live">
+		            
+		        </div>
+		    </main>
+		    <nav>
+		        <a href="#home">home</a>
+		        <a href="#video">video</a>
+		        <a href="#live">live</a>
+		    </nav>
+	</body>
+</html>
