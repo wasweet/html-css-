@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				width: 100vw;
+				height: 100vh;
+				background-color: #34495E;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			main {
+				width: 200px;
+				height: 200px;
+				position: relative;
+				/* border: 1px solid #000000; */
+				transform-style: preserve-3d;
+				transform: perspective(900px) rotateX(-45deg);
+				transition: 2s;
+				transform-origin: center center 100px ; 
+			}
+			body:hover main {
+				transform: perspective(900px) rotateX(-185deg) rotateY(150deg);
+			}
+			main div {
+				width: 200px;
+				height: 200px;
+				background-color: #0000FF;
+				position: absolute;
+				font-size: 3em;
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transform-origin: center center 100px;  
+				opacity: .7;
+			}
+			
+			main div:nth-child(1) {
+				background-color: #00FF00;
+				transform: rotateY(90deg);
+			}
+			main div:nth-child(2) {
+				background-color: #27ae60;
+				transform: rotateY(180deg);
+			}
+			main div:nth-child(3) {
+				background-color: #e67e22;
+				transform: rotateY(270deg);
+			}
+			main div:nth-child(4) {
+				background-color: #8e44ad;
+				transform: rotateY(360deg);
+			}
+			main div:nth-child(5) {
+				background-color: #ecf0f1;
+				transform: rotateX(90deg);
+				transform-origin: top;
+			}
+			main div:nth-child(6) {
+				background-color: #ecf0f1;
+				transform: rotateX(-90deg);
+				transform-origin: bottom;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</main>
+	</body>
+</html>
