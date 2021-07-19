@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		 body {
+		     width: 100vw;
+		     height: 100vh;
+		     display: flex;
+		     flex-direction: column;
+		     justify-content: center;
+		     align-items: center;
+		     background: #2c3e50;
+		 }
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: #0000FF;
+				border-radius: 50%;
+				animation-name: jump;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate-reverse;
+			}
+			@keyframes jump{
+
+				to{
+					transform: translateY(-300px);
+					}
+			}
+			footer {
+				width:200px;
+				height: 50px;
+				background-color: rgba(0,0,0,.3);
+				position: absolute;
+				transform: translateY(50px);
+				border-radius: 50%;
+				filter: blur(5px);
+				z-index: -1;
+				animation-name: shadow;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate-reverse;
+			}
+			@keyframes shadow{
+				from{}
+				to{
+					width:200px;
+					height: 50px;
+					filter: blur(35px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+			<div></div>
+			<footer></footer>
+	</body>
+</html>
